@@ -45,4 +45,9 @@ public class StudentBOImpl implements StudentBO {
     public void deleteStudent(String id) {
 
     }
+
+    @Override
+    public Object findAllStudents() {
+        return null;
+    }
 }

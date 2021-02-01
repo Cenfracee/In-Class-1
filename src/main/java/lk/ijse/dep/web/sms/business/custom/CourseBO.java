@@ -25,4 +25,5 @@ public interface CourseBO extends SuperBO {
 
     }
 
+    Object findAllCourses();
 }

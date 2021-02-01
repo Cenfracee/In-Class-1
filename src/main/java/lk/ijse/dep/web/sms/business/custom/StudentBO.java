@@ -19,4 +19,6 @@ public interface StudentBO extends SuperBO {
     void setEntityManager(EntityManager em);
 
     void deleteStudent(String id);
+
+    Object findAllStudents();
 }

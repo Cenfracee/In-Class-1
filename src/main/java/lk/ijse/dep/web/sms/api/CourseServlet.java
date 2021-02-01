@@ -8,6 +8,8 @@ import lk.ijse.dep.web.sms.exception.ResponseExceptionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.json.bind.Jsonb;
+import javax.json.bind.JsonbBuilder;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.servlet.*;
@@ -20,8 +22,23 @@ public class CourseServlet extends HttpServlet {
     final Logger logger = LoggerFactory.getLogger(CourseServlet.class);
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Jsonb jsonb = JsonbBuilder.create();
 
+        final EntityManagerFactory emf = (EntityManagerFactory) getServletContext().getAttribute("emf");
+        EntityManager em = emf.createEntityManager();
+
+        try{
+            resp.setContentType("application/json");
+            CourseBO courseBO = BOFactory.getInstance().getBO(BOTypes.COURSE);
+            CourseBO.setEntityManager(em);
+            resp.getWriter().println(jsonb.toJson(courseBO.findAllCourses()));
+
+        } catch (Throwable t) {
+            ResponseExceptionUtil.handle(t, resp);
+        } finally {
+            em.close();
+        }
     }
 
     @Override

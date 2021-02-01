@@ -3,6 +3,7 @@ package lk.ijse.dep.web.sms.business.custom;
 import lk.ijse.dep.web.sms.business.SuperBO;
 import lk.ijse.dep.web.sms.dto.StudentDTO;
 
+import javax.persistence.EntityManager;
 import java.util.List;
 
 public interface StudentBO extends SuperBO {
@@ -14,4 +15,8 @@ public interface StudentBO extends SuperBO {
     boolean deleteCustomer(String customerId) throws Exception;
 
     List<StudentDTO> findAllCustomers() throws Exception;
+
+    void setEntityManager(EntityManager em);
+
+    void deleteStudent(String id);
 }

@@ -4,6 +4,7 @@ package lk.ijse.dep.web.sms.business.custom.impl;
 import lk.ijse.dep.web.sms.business.custom.StudentBO;
 import lk.ijse.dep.web.sms.dto.StudentDTO;
 
+import javax.persistence.EntityManager;
 import java.sql.Connection;
 import java.util.List;
 
@@ -33,5 +34,15 @@ public class StudentBOImpl implements StudentBO {
     @Override
     public List<StudentDTO> findAllCustomers() throws Exception {
         return null;
+    }
+
+    @Override
+    public void setEntityManager(EntityManager em) {
+
+    }
+
+    @Override
+    public void deleteStudent(String id) {
+
     }
 }

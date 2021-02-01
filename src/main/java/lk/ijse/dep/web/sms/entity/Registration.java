@@ -1,21 +1,26 @@
 package lk.ijse.dep.web.sms.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.sql.Date;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name="registration")
 public class Registration implements SuperEntity  {
     @EmbeddedId
     private RegistrationPK registrationPK;
     @Column(name = "registration_date")
     private Date registrationDate;
+    @Setter(AccessLevel.NONE)
+    @ManyToOne
+    @JoinColumn(name = "course_code", referencedColumnName = "code", insertable = false, updatable = false)
+    private Course course;
+    @Setter(AccessLevel.NONE)
+    @ManyToOne
+    @JoinColumn(name = "student_id", referencedColumnName = "id", insertable = false, updatable = false)
+    private Student student;
 }

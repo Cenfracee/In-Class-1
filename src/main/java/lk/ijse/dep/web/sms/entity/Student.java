@@ -8,13 +8,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.sql.Date;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table( name="student")
 public class Student implements SuperEntity{
     @Id
     private String id;
@@ -24,6 +27,5 @@ public class Student implements SuperEntity{
     private Date dob;
     private Gender gender;
     private Address address;
-    private List<Course> courseList;
 
 }

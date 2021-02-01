@@ -13,7 +13,7 @@ import java.sql.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Registration {
+public class Registration implements SuperEntity  {
     @EmbeddedId
     private RegistrationPK registrationPK;
     @Column(name = "registration_date")

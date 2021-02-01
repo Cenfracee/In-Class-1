@@ -5,12 +5,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Embeddable;
+import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Embeddable
-public class RegistrationPK {
+public class RegistrationPK implements Serializable {
     private String code;
     private String id;
 }

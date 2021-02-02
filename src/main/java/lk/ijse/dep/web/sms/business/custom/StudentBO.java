@@ -8,13 +8,13 @@ import java.util.List;
 
 public interface StudentBO extends SuperBO {
 
-    boolean saveCustomer(StudentDTO dto) throws Exception;
+    boolean saveStudent(StudentDTO dto) throws Exception;
 
-    boolean updateCustomer(StudentDTO dto) throws Exception;
+    boolean updateStudent(StudentDTO dto) throws Exception;
 
-    boolean deleteCustomer(String customerId) throws Exception;
+    boolean deleteStudent(String studentId) throws Exception;
 
-    List<StudentDTO> findAllCustomers() throws Exception;
+    List<StudentDTO> findAllStudents() throws Exception;
 
     void setEntityManager(EntityManager em);
 

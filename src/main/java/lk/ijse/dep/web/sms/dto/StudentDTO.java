@@ -13,7 +13,7 @@ import java.sql.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class StudentDTO {
-    private String id;
+    private int id;
     private String studentName;
     private String contact;
     private Date dob;

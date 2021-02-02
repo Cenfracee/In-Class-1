@@ -13,17 +13,20 @@ public interface CourseBO extends SuperBO {
     static void deleteCourse(String id) {
     }
 
-    boolean saveItem(CourseDTO dto) throws Exception;
+    boolean saveCourse(CourseDTO dto) throws Exception;
 
-    boolean updateItem(CourseDTO dto) throws Exception;
+    boolean updateCourse(CourseDTO dto) throws Exception;
 
-    boolean deleteItem(String code) throws Exception;
+    boolean deleteCourse(String code) throws Exception;
 
-    List<CourseDTO> findAllItems() throws Exception;
+    List<CourseDTO> findAllCourses() throws Exception;
+
 
     static void setEntityManager(EntityManager em) {
 
     }
 
     Object findAllCourses();
+
+    void updateCourse(CourseDTO dto);
 }

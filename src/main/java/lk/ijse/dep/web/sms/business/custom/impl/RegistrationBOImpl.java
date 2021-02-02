@@ -20,7 +20,9 @@ public class RegistrationBOImpl implements RegistrationBO {
     }
 
     @Override
-    public List<RegistrationDTO> searchOrdersByCustomerName(String name) throws Exception {
+    public List<RegistrationDTO> searchRegistrationByStudentName(String name) throws Exception {
         return null;
     }
+
+
 }

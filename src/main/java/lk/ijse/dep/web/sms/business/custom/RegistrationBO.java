@@ -10,5 +10,5 @@ public interface RegistrationBO extends SuperBO {
 
     public boolean placeOrder(RegistrationDTO dto) throws Exception;
 
-    List<RegistrationDTO> searchOrdersByCustomerName(String name) throws Exception;
+    List<RegistrationDTO> searchRegistrationByStudentName(String name) throws Exception;
 }
